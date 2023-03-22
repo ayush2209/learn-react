@@ -21,4 +21,4 @@ const parent = React.createElement(
 
 console.log(parent); //What will be op. - It'll be an onject. //React element.
 const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
-reactRoot.render(parent);
+// reactRoot.render(parent); // We can not write two time render method it'll override the latest one.
