@@ -4,15 +4,15 @@ Q2. What is crossorigin?
 
 Q3. React.createElement(a,b,c) -> Accept three arguement
     where
-        a= tag name (whhch tag we want to create.)
-        b= An Object. [Used to give attribute to the class.]
+        a= tag name (whhch tag we want to create).
+        b= An Object used to give attribute to the class.
         c= tag content (what content we want to display).
         like this,
-        <!-- 
+        <!--
             const heading = React.createElement('h1',
                 {id :'heading'},
                 'Hello World Using React !'
-            ); 
+            );
         -->
 
 Q4. What is crateRoot in react and what is the use of this.
