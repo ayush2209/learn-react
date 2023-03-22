@@ -58,3 +58,7 @@ Answer: `Async` - The async attribute is a `boolean attribute`. The script is do
 ```sh
 <script src="demo_defer.js" defer></script>
 ```
+
+## References:
+- https://beta.reactjs.org/apis/react/createElement
+- https://www.youtube.com/watch?v=IrHmpdORLu8
