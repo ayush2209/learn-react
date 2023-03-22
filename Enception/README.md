@@ -48,3 +48,13 @@ Answer:
 
 ## Q7. What are `async` and `defer` in JavaScript?
 Answer: `Async` - The async attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the    page, and `executed as soon` as it is available (do not block HTML DOM construction during downloading process) and don’t wait for anything.
+### _Syntax_
+```sh
+<script src="demo_async.js" async></script>
+```
+
+`Defer` - The defer attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed after the page` has finished parsing(when browser finished DOM construction). The `defer attribute` tells the browser `not to wait for the script`. Instead, the browser will continue to process the HTML, build DOM.
+### _Syntax_
+```sh
+<script src="demo_defer.js" defer></script>
+```
