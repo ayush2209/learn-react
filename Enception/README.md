@@ -34,7 +34,8 @@
 
 ## Q2. Difference b/w `framework and library`.
 
-Answer: `framework`:
+Answer: `framework`: 
+        ![alt image_frameWork](https://www.interviewbit.com/blog/wp-content/uploads/2021/10/Image-2-2.png)
         `library`:
 
 ## Q3. Why is React knwon as `React`?
