@@ -29,7 +29,7 @@
 - `Minification` of our file.
 - Its a bulder which `bundle` the code, `compress` the file, remove all the `white spcae` from our code.
 - `Diffrential Bundling`: When app is hosted, it supports to supoort older browser.
-
+- Good error handling,suggestions.
 
 ## What is `npx` ?
 Answer: It helps us to execute any dependecy/bundle.
