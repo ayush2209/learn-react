@@ -2,7 +2,6 @@
   "name": "ignation",
   "version": "1.0.0",
   "description": "React Episode: 02",
-  "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +14,6 @@
   "dependencies": {
     "re act": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browserlist" : ["last 2 versions"]
 }
