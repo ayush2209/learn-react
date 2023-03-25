@@ -73,7 +73,7 @@ A: To give power to the appication to support older browser.
 - If we provide `last 2 versions` it means this is supported to all the browser but only last two versions.
 
 ## ^caret and ~tilde
-A: Remember `Shiv` from `EFI`, We discussed and did many times to block shuch automactically version updarge to avoid unwanted size increment/or such unknowely production failure.
+A: Remember `Shiv` from `EFI`, We discussed and did many times to block such automactically version updarge to avoid unwanted size increment/or such unknowely production failure.
 - It does not change our package.json file but upgarde package,lock.json file while building the code.
 
 ----
