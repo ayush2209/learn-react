@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(230, 246, 246);
+    width: auto;
+}
+
+input {
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+img {
+    border-radius: 10%;
+}
+
+@media screen and (max-width: 770px) {
+    input {
+        width: 200px;
+        transition: all 500ms ease;
+    }
+}
+@media screen and (max-width: 500px) {
+    input {
+        width: 100px;
+        transition: all 500ms ease;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    input {
+        width: 70px;
+        transition: all 500ms ease;
+    }
+}
