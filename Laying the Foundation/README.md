@@ -32,6 +32,7 @@ I   - If one is familiar with HTML, it is quite easy to use JSX when building Re
     - JSX Represents Objects
         - Babel compiles JSX down to React.createElement() calls.
         - These two examples are identical:
+``` Syntax
             const element = (
             <h1 className="greeting">
                 Hello, world!
@@ -43,8 +44,9 @@ I   - If one is familiar with HTML, it is quite easy to use JSX when building Re
             {className: 'greeting'},
             'Hello, world!'
             );
-    - Can write any javascript expression into JSX : `YES` like below
+```
 ###
+- Can write any javascript expression into JSX : `YES` like below
 ```
     function formatName(user) {
     return user.firstName + ' ' + user.lastName;
@@ -61,8 +63,6 @@ I   - If one is familiar with HTML, it is quite easy to use JSX when building Re
     </h1>
     );
 ```
-
-- `Behind the Scenes of JSX`
 
 ## Q. `Babel` & `parcel` role in JSX?
 A:  `Parcel`: JSX code transpiled into React.createElement and reactElement convert into normal javascipt object which JRE/browser understand.
