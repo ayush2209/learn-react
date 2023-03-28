@@ -4,6 +4,8 @@
 A:  - `JSX` stands for JavaScript XML. JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React.  
     - `JSX` converts HTML tags into react elements.
 
+`React.createElement` vs `JSX`
+
 ### Example 1 using JSX:
 ```
 const jsxElement = <h1>JSX Element</h1>;
@@ -19,8 +21,6 @@ root.render(myElement);
 - `Image` tag using JSX: 
 const element = <img src={url}></img>;
 
-## Q: `React.createElement` vs `JSX`
-A: 
 
 ## Q. `Benefits of JSX` / `Superpowers` of `JSX`.?
 A:  - JSX helps us in keeping our code simpler and elegant when writing large pieces of code.
