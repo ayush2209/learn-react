@@ -15,5 +15,4 @@
     - Add `CSS to make it look nice`
 
 `All Assignment Done.`
-
-![alt text](/Coading%20Assignment/Episode 03/assignment_03.png)
+<img width="1438" alt="assignment_03" src="https://user-images.githubusercontent.com/53752682/228489858-e8645b3f-d40a-474f-87bf-503dca4e4823.png">
