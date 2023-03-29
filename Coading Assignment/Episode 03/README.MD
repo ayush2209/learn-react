@@ -16,4 +16,4 @@
 
 `All Assignment Done.`
 
-![alt text](/Coading%20Assignment/Episode%2003/assignment_03.png)
+![alt text](/Coading%20Assignment/Episode 03/assignment_03.png)

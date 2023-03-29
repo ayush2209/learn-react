@@ -1,10 +1,11 @@
-/Ignation/node_modules
-/Ignation/.parcel-cache
-/Ignation/dist
-/Laying the Foundation/node_modules
-/Laying the Foundation/.parcel-cache
-/Laying the Foundation/dist
+/Ignation [Episode: 02]/node_modules
+/Ignation [Episode: 02]/.parcel-cache
+/Ignation [Episode: 02]/dist
 
-/Coading Assignment/Episode 03/node_modules
+/Laying the Foundation [Episode: 03]/node_modules
+/Laying the Foundation [Episode: 03]/.parcel-cache
+/Laying the Foundation [Episode: 03]/dist
+
 /Coading Assignment/Episode 03/.parcel-cache
+/Coading Assignment/Episode 03/node_modules
 /Coading Assignment/Episode 03/dist
