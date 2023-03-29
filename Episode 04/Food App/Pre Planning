@@ -1,0 +1,22 @@
+Pre Planning
+
+    - Main Component - AppLayout
+
+    - Header
+        - Logo
+        - Menu
+            - Home
+            - About
+            - Cart
+            - Profile
+
+    - Body Conatiner
+        - Restaurants Conatiner / Cart (Will be dynacmic.)
+        - Search Box to serach food or restaurants.
+
+    - Footer
+        - Copyright
+        - Place where we are offering.
+        - Address
+        - Url
+        - Support 24*7 (Will be a button or on right side with a form.)

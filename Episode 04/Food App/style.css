@@ -1,0 +1,40 @@
+.not-rendered {
+    color: rgb(233, 70, 70);
+}
+
+.app-Conatiner {
+
+}
+
+.header-Item {
+    width: 100vw;
+    height: 80px;
+    background-color: var(--header-bg-color);
+    color: var(--light-text-color);
+    z-index: 999;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    box-shadow: -2px 7px 5px -6px #0000009c;
+}
+
+.imgage-logo > img {
+    width: 50px;
+}
+
+.menu-list > ul {
+    display: flex;
+}
+
+.menu-list > ul > li {
+    padding: 5px;
+    margin: 5px;
+    list-style-type: none;
+    cursor: pointer;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "learn-react",
+  "version": "1.0.0",
+  "description": "Learn React",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayush2209/learn-react.git"
+  },
+  "author": "Ayush Anand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayush2209/learn-react/issues"
+  },
+  "homepage": "https://github.com/ayush2209/learn-react#readme"
+}
