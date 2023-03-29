@@ -1,3 +1,5 @@
+# Chapter 02 - Igniting the app
+
 ---------------------------------------- Class Notes ----------------------------------------
 
 ## Setup git from local to remote.
