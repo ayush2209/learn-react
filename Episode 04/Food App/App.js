@@ -2142,7 +2142,7 @@ const SearchInput = () => (
         <div>
             <input type='text' placeholder='Search Item ' />
             <button>
-                <i class='fa fa-duotone fa-magnifying-glass'></i>
+                <i className='fa fa-duotone fa-magnifying-glass'></i>
             </button>
         </div>
     </div>
@@ -2183,7 +2183,12 @@ const Body = () => {
             <SearchInput />
             <div className='restaurant-list'>
                 {restaurantList.map((eachRes) => {
-                    return <RestaurantCardComponent resObj={eachRes} />;
+                    return (
+                        <RestaurantCardComponent
+                            key={eachRes.data.id}
+                            resObj={eachRes}
+                        />
+                    );
                 })}
             </div>
         </>
