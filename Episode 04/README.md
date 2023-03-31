@@ -2,11 +2,11 @@
 
 ## Is `jsx` is mandatory for React?
 
-A: - No! But with the help using jsx it's very easy to build react app. - JSX maked developement fast, easy to maintian the code and debug.
+A: - No! But with the help using jsx it's very easy to build react app. - JSX maked developement fast, easy to maintain the code and debug.
 
 ## Is `ES6` Mandatory for react?
 
-A: No! We can still develope react app without ES6.
+A: No! We can still develop react app without ES6.
 
 ## How can i Write comment in `JSX`?
 
@@ -22,9 +22,9 @@ _/}
 ## What is `<React.Fragement></React.Fragement>` and `<></>`?
 
 A: React accepts only one parent directory at aprent level. It mean we need a parent div and all the other things/items can be wrapped into parent section.
--But if we want to add two dev at parent level, react wont allowed.
-to overcome from this, we have a option that add a parent div and add all in this, but when we debug and see our html/DOM we'll see there is one div/section with no use, which is not a good practice while developing.
--So react gives us an option to add a parent div/section and wrap all nested section in that and in DOM tree it doesnot create an entry which is `<React.Fragement></React.Fragement>`
+
+-   But if we want to add two dev at parent level, react wont allowed. to overcome from this, we have a option that add a parent div and add all in this, but when we debug and see our html/DOM we'll see there is one div/section with no use, which is not a good practice while developing.
+-   So react gives us an option to add a parent div/section and wrap all nested section in that and in DOM tree it doesnot create an entry which is `<React.Fragement></React.Fragement>`
 
 ### Syntax
 
