@@ -135,5 +135,3 @@ A: DOM stands for `Document Object Model`, which represents your application UI 
 | Creates a new DOM if the element updates.                        | Update the JSX if the element update                     |
 | It allows us to directly target any specific node (HTML element) | It can produce about 200,000 Virtual DOM Nodes / Second. |
 | It represents the UI of your application                         | It is only a virtual representation of the DOM           |
-
-# Thanks Chetan for Notes on DOM VS V-DOM.
