@@ -24,7 +24,14 @@ import restaurantList from "../utils/mockData";
 //     );
 // };
 
+function filterRestaurant(textToFilter, resList) {
+    return restaurantList.filter((eachItem) =>
+        eachItem.data.name.includes(textToFilter)
+    );
+}
+
 export const Body = () => {
+    const [searchText, setSearch] = useState("");
     const [res_List, set_res_list] = useState(restaurantList);
 
     return (
@@ -35,13 +42,24 @@ export const Body = () => {
             <div className='searchBar'>
                 <div></div>
                 <div>
-                    <input type='text' placeholder='Search Item ' />
+                    <input
+                        type='text'
+                        placeholder='Search Restaurant'
+                        value={searchText}
+                        onChange={(e) => {
+                            setSearch(e.target.value);
+                        }}
+                    />
                     <button
                         onClick={() => {
-                            const filtered_Res_list = res_List.filter(
-                                (eachItem) => eachItem.data.avgRating >= 4
-                            );
-                            set_res_list(filtered_Res_list);
+                            // const filtered_Res_list = res_List.filter(
+                            //     (eachItem) => eachItem.data.avgRating >= 4
+                            // );
+                            // set_res_list(filtered_Res_list);
+                            // Update the UI based on Search
+                            const data = filterRestaurant(searchText, res_List); // Pass Two arguement one what to search and seconf from where we need to search.
+                            // Update the list.
+                            set_res_list(data);
                         }}
                     >
                         <i className='fa fa-duotone fa-magnifying-glass'></i>
