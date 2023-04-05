@@ -48,7 +48,8 @@ A: React accepts only one parent directory at aprent level. It mean we need a pa
 
 ## What is Virtual DOM?
 
-A:`The virtual DOM (VDOM)` is a programming concept where an ideal, or “virtual”, representation of a UI is kept in `memory` and `synced` with the “real” DOM by a library such as `ReactDOM`. This process is called `reconciliation`.
+A:`V-DOM` is a prelica of `actual DOM` and at the end it's an object.
+`The virtual DOM (VDOM)` is a programming concept where an ideal, or “virtual”, representation of a UI is kept in `memory` and `synced` with the “real” DOM by a library such as `ReactDOM`. This process is called `reconciliation`.
 
 ## What is `Reconciliation` in React?
 
@@ -56,7 +57,8 @@ A:`Reconciliation` is the process through which React updates the Browser DOM an
 
 ## What is React Fiber?
 
-A: React Fiber is a concept of ReactJS that is used to render a system faster, smoother and smarter. The Fiber reconciler, which became the default reconciler for React 16 and above, is a complete rewrite of React’s reconciliation algorithm to solve some long-standing issues in React. Because Fiber is asynchronous, React can:
+A: React Fiber is a concept of ReactJS that is used to render a system faster, smoother and smarter. The Fiber reconciler, which became the default reconciler for React 16 and above, is a complete rewrite of React’s reconciliation algorithm to solve some long-standing issues in React. Because Fiber is asynchronous,
+React can:
 
 -   Pause, resume, and restart rendering work on components as new updates come in
 -   Reuse previously completed work and even abort it if not needed
@@ -64,7 +66,7 @@ A: React Fiber is a concept of ReactJS that is used to render a system faster, s
 
 ## Why we need keys in React? When do we nedd keys in React?
 
-A: Keys in react is a special attribute and unique Identifier used to give an identity to the elements. - To keep each item identical with other/unique,
+A: `Keys` in react is a special attribute and unique Identifier used to give an identity to the elements. - To keep each item identical with other/unique,
 
 # Benefits of giving keys in react element,
 

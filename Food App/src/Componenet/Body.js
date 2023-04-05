@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import RestaurantCardComponent from "./RestaurantComponent";
 import restaurantList from "../utils/mockData";
@@ -33,6 +33,40 @@ function filterRestaurant(textToFilter, resList) {
 export const Body = () => {
     const [searchText, setSearch] = useState("");
     const [res_List, set_res_list] = useState(restaurantList);
+
+    {
+        /* 
+        useEffect is a react Hook
+        we need to call this and it taked one function as an argumenet, which is a callback function.
+        [] -> Is known a dependency array for useEffect.
+        If we provide any veribale in this array,
+        it means this useEffect is dependent on that variable state and will on every state chabge for the variable.
+        There are two condition when useEffect calls,
+            1> On Load
+            2> On State chnages
+        There are two thing where useEffect call based on Dependency Array.
+            1>If array is empty => Once after render
+            2>If dependency array has any variable like [searchText] , then
+                it'll call Once after render + each time when searchText updates.
+
+    */
+    }
+
+    useEffect(() => {
+        // console.log("Use Effect called");
+        // API Call.
+        fetchRestaurantsList();
+    }, []);
+
+    console.log("render()"); // It'll render when the State will change.
+
+    async function fetchRestaurantsList() {
+        const data = await fetch(
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING"
+        );
+        const json = await data.json();
+        console.log("Fetch Res: ", json);
+    }
 
     return (
         <>
