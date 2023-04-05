@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 import RestaurantCardComponent from "./RestaurantComponent";
+import Shimmer from "./ShimmerUI";
+
 import restaurantList from "../utils/mockData";
 
 // const SearchInput = ({ resList }) => {
@@ -25,14 +27,15 @@ import restaurantList from "../utils/mockData";
 // };
 
 function filterRestaurant(textToFilter, resList) {
-    return restaurantList.filter((eachItem) =>
+    return resList.filter((eachItem) =>
         eachItem.data.name.includes(textToFilter)
     );
 }
 
 export const Body = () => {
     const [searchText, setSearch] = useState("");
-    const [res_List, set_res_list] = useState(restaurantList);
+    const [allRestaurants, setAllRestaurants] = useState([]);
+    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     {
         /* 
@@ -66,9 +69,13 @@ export const Body = () => {
         );
         const json = await data.json();
         console.log("Fetch Res: ", json);
+        setFilteredRestaurants(json?.data?.cards[2]?.data.data.cards);
+        setAllRestaurants(json?.data?.cards[2]?.data.data.cards);
     }
 
-    return (
+    return allRestaurants.length === 0 ? (
+        <Shimmer />
+    ) : (
         <>
             {/* <SearchInput resList={restaurant_List} />{" "} */}
             {/* Passing the value from here to search component to filter the data. */}
@@ -90,10 +97,14 @@ export const Body = () => {
                             //     (eachItem) => eachItem.data.avgRating >= 4
                             // );
                             // set_res_list(filtered_Res_list);
-                            // Update the UI based on Search
-                            const data = filterRestaurant(searchText, res_List); // Pass Two arguement one what to search and seconf from where we need to search.
+                            // Update the UI based on Search.
+                            // Pass Two arguement one what to search and seconf from where we need to search.
+                            const data = filterRestaurant(
+                                searchText,
+                                allRestaurants
+                            );
                             // Update the list.
-                            set_res_list(data);
+                            setFilteredRestaurants(data);
                         }}
                     >
                         <i className='fa fa-duotone fa-magnifying-glass'></i>
@@ -102,7 +113,7 @@ export const Body = () => {
             </div>
 
             <div className='restaurant-list'>
-                {res_List.map((eachRes) => {
+                {filteredRestaurants?.map((eachRes) => {
                     return (
                         <RestaurantCardComponent
                             key={eachRes.data.id}
