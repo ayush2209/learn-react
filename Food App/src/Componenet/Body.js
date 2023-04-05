@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
+
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 import RestaurantCardComponent from "./RestaurantComponent";
 import Shimmer from "./ShimmerUI";
@@ -28,7 +31,7 @@ import restaurantList from "../utils/mockData";
 
 function filterRestaurant(textToFilter, resList) {
     return resList.filter((eachItem) =>
-        eachItem.data.name.includes(textToFilter)
+        eachItem.data.name.toLowerCase().includes(textToFilter)
     );
 }
 
@@ -38,7 +41,7 @@ export const Body = () => {
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     {
-        /* 
+        /*
         useEffect is a react Hook
         we need to call this and it taked one function as an argumenet, which is a callback function.
         [] -> Is known a dependency array for useEffect.
@@ -83,32 +86,37 @@ export const Body = () => {
             <div className='searchBar'>
                 <div></div>
                 <div>
-                    <input
-                        type='text'
-                        placeholder='Search Restaurant'
-                        value={searchText}
-                        onChange={(e) => {
-                            setSearch(e.target.value);
-                        }}
-                    />
-                    <button
-                        onClick={() => {
-                            // const filtered_Res_list = res_List.filter(
-                            //     (eachItem) => eachItem.data.avgRating >= 4
-                            // );
-                            // set_res_list(filtered_Res_list);
-                            // Update the UI based on Search.
-                            // Pass Two arguement one what to search and seconf from where we need to search.
-                            const data = filterRestaurant(
-                                searchText,
-                                allRestaurants
-                            );
-                            // Update the list.
-                            setFilteredRestaurants(data);
-                        }}
-                    >
-                        <i className='fa fa-duotone fa-magnifying-glass'></i>
-                    </button>
+                    <Form className='d-flex'>
+                        <Form.Control
+                            type='search'
+                            placeholder='Search Restaurant'
+                            className='me-2'
+                            aria-label='Search'
+                            value={searchText}
+                            onChange={(e) => {
+                                setSearch(e.target.value);
+                            }}
+                        />
+                        <Button
+                            variant='outline-success'
+                            onClick={() => {
+                                // const filtered_Res_list = res_List.filter(
+                                //     (eachItem) => eachItem.data.avgRating >= 4
+                                // );
+                                // set_res_list(filtered_Res_list);
+                                // Update the UI based on Search.
+                                // Pass Two arguement one what to search and seconf from where we need to search.
+                                const data = filterRestaurant(
+                                    searchText.toLowerCase(),
+                                    allRestaurants
+                                );
+                                // Update the list.
+                                setFilteredRestaurants(data);
+                            }}
+                        >
+                            <i className='fa fa-duotone fa-magnifying-glass'></i>
+                        </Button>
+                    </Form>
                 </div>
             </div>
 

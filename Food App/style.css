@@ -5,6 +5,11 @@
 .app-Conatiner {
 }
 
+#root {
+    align-items: center;
+    font-family: sans-serif, arial, Helvetica Neue, sans-serif;
+}
+
 .header-Item {
     height: 80px;
     background-color: var(--header-bg-color);
@@ -100,8 +105,7 @@
 }
 
 .card_text p {
-    /* margin: 0 0 24px; */
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 }
 
@@ -112,4 +116,61 @@
 .fonts-loaded {
     font-family: sans-serif, arial, Helvetica Neue, sans-serif;
     letter-spacing: 0;
+}
+
+/* Shimmer */
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Ayush */
+.shimmer-container .shimmer-img {
+    height: 410px;
+    width: 500px;
+}
+
+.shimmer-img {
+    width: fit-content;
+}
+
+.shimmer-title {
+    width: 40%;
+    margin-top: 10px;
+}
+
+.shimmer-verg-nonvej {
+    width: 40%;
+    margin-top: 10px;
+}
+
+.shimmer-area {
+    width: 100%;
+}
+
+.shimmer-card-bottom {
+    width: 25%;
+    margin-top: 0.4rem;
+    margin-bottom: 0px;
+}
+
+/*Animation to Shimmer Component Cards */
+.stroke {
+    height: 12px;
+    background: #777;
+}
+.animate {
+    animation: shimmer 3s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+    background-size: 1000px 100%;
+}
+@keyframes shimmer {
+    from {
+        background-position: -1000px 0;
+    }
+    to {
+        background-position: 1000px 0;
+    }
 }

@@ -1,10 +1,14 @@
-import { RES_IMG_URL } from "../utils/constant";
+import {RES_IMG_URL} from "../utils/constant";
 
 const color = {
     color: "#db7c38",
 };
 
-const RestaurantCardComponent = ({ resObj }) => {
+const customStyle = {
+    justifyContent: "space-between",
+};
+
+const RestaurantCardComponent = ({resObj}) => {
     const {
         cloudinaryImageId,
         name,
@@ -17,15 +21,19 @@ const RestaurantCardComponent = ({ resObj }) => {
     return (
         <div className='card'>
             <img src={RES_IMG_URL + cloudinaryImageId} />
-            <h4>{name}</h4>
+            <span className='mt-3' style={customStyle}>
+                <h5>{name}</h5>
+                <p>{resObj.data.veg ? "Veg" : "Nonveg"}</p>
+            </span>
             <p>{cuisines.join(", ")}</p>
             <p>{area}</p>
             <hr />
             <span>
                 <p style={color}>
-                    <i className='fa-solid fa-star'></i> {avgRating}
+                    <i className='fa-solid fa-star'></i>
+                    {avgRating}
                 </p>
-                <p>| </p>
+                <p> | </p>
                 <p>{lastMileTravelString}</p>
                 <p>| </p>
                 <p>{costForTwoString}</p>
