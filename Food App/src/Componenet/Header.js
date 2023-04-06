@@ -1,42 +1,8 @@
-// import Button from "react-bootstrap/Button";
-// import Stack from "react-bootstrap/Stack";
-
 // const headerLogo = require("../../assets/logo.jpg");
-// // Header Component
-// const Header = () => (
-//     <div className='header-Item'>
-//         <div className='imgage-logo'>
-//             <img src={headerLogo} alt='logo not loaded' />
-//         </div>
-//         <div className='menu-list'>
-//             <ul>
-//                 <li>Home</li>
-//                 <li>Restaurants</li>
-//                 <li>About</li>
-//                 <li>Contact Us</li>
-//                 <li>
-//                     <i className='fa-solid fa-cart-shopping'></i>
-//                 </li>
-//                 <li>
-//                     <i className='fa fa-thin fa-user'></i>
-//                 </li>
-//                 <Stack direction='horizontal' gap={2}>
-//                     <Button as='a' variant='primary'>
-//                         Button as link
-//                     </Button>
-//                     <Button as='a' variant='success'>
-//                         Button as link
-//                     </Button>
-//                 </Stack>
-//             </ul>
-//         </div>
-//     </div>
-// );
-
-// export default Header;
 
 import {useState} from "react";
 import {Button} from "react-bootstrap";
+import {Link} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -48,7 +14,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand='lg' bg='light' variant='light'>
             <Container>
-                <Navbar.Brand href='#home'>
+                <Navbar.Brand as={Link} to={"/"} href='home'>
                     Hunger Hunt
                     {/* <div className='imgage-logo'>
                         <img
@@ -64,11 +30,19 @@ const Header = () => {
                     <Nav className='me-auto'>
                         {/* Empty Nav for put rest on left side. */}
                     </Nav>
+
                     <Nav className='d-flex'>
-                        <Nav.Link href='#home'>Home</Nav.Link>
-                        <Nav.Link href='#restaurants'>Restaurants</Nav.Link>
-                        <Nav.Link href='#about'>About</Nav.Link>
-                        <Nav.Link href='#contact-us'>Contact Us</Nav.Link>
+                        <Nav.Link as={Link} to=''>
+                            Home
+                        </Nav.Link>
+
+                        <Nav.Link as={Link} to='/about'>
+                            About
+                        </Nav.Link>
+                        <Nav.Link as={Link} to='/contact-us'>
+                            Contact Us
+                        </Nav.Link>
+
                         {isLogin ? (
                             <NavDropdown
                                 align='end'
@@ -90,7 +64,7 @@ const Header = () => {
                             </NavDropdown>
                         ) : (
                             <Button
-                                variant='outline-primary'
+                                variant='outline-none'
                                 onClick={() => {
                                     setLoginState(true);
                                 }}

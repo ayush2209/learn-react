@@ -1,32 +1,33 @@
 {
-  "name": "learn-react",
-  "version": "1.0.0",
-  "description": "Learn React",
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0",
-    "bootstrap": "^5.2.3",
-    "mdb-react-ui-kit": "^6.0.0",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.7.2",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "parcel": "^2.8.3",
-    "process": "^0.11.10"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ayush2209/learn-react.git"
-  },
-  "author": "Ayush Anand",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ayush2209/learn-react/issues"
-  },
-  "homepage": "https://github.com/ayush2209/learn-react#readme"
+    "name": "learn-react",
+    "version": "1.0.0",
+    "description": "Learn React",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.4.0",
+        "bootstrap": "^5.2.3",
+        "mdb-react-ui-kit": "^6.0.0",
+        "react": "^18.2.0",
+        "react-bootstrap": "^2.7.2",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.10.0"
+    },
+    "devDependencies": {
+        "parcel": "^2.8.3",
+        "process": "^0.11.10"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ayush2209/learn-react.git"
+    },
+    "author": "Ayush Anand",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ayush2209/learn-react/issues"
+    },
+    "homepage": "https://github.com/ayush2209/learn-react#readme"
 }

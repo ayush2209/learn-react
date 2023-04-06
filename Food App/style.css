@@ -174,3 +174,21 @@
         background-position: 1000px 0;
     }
 }
+
+.color {
+    background-color: greenyellow;
+}
+
+.rating-card {
+    background-color: red;
+}
+
+.restaurant-Name-Add {
+    font-size: 0.93rem;
+    color: #7e808c;
+    height: calc(0.93rem + 2px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
