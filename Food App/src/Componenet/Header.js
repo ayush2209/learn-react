@@ -48,7 +48,17 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand='lg' bg='light' variant='light'>
             <Container>
-                <Navbar.Brand href='#home'>Hunger Hunt</Navbar.Brand>
+                <Navbar.Brand href='#home'>
+                    Hunger Hunt
+                    {/* <div className='imgage-logo'>
+                        <img
+                            src={
+                                "https://ik.imagekit.io/ytchderwk/learn-react/logo.jpg?updatedAt=1680775135867"
+                            }
+                            alt='logo not loaded'
+                        />
+                    </div> */}
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                     <Nav className='me-auto'>
