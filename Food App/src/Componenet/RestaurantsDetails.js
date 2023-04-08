@@ -48,8 +48,8 @@ const RestaurantDetails = () => {
     }, []);
 
     async function getRestaurantsDetails() {
-        const resApiDetails = await fetch(RESTAURANT_DETAILS_API);
-        const jsonData = await resApiDetails.json();
+        const resApiDetails = await fetch(RESTAURANT_DETAILS_API + id);
+        const jsonData = await resApiDetails?.json();
         const restaurant_Details = jsonData?.data?.cards[0]?.card?.card?.info;
         const restaurant_Menu =
             jsonData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
@@ -95,7 +95,7 @@ const RestaurantDetails = () => {
                     <p> 26 Minutes</p>
                     <p style={{marginLeft: "5px"}}>
                         {"   |  "}
-                        {restaurantDetails.costForTwoMessage}
+                        {restaurantDetails?.costForTwoMessage}
                     </p>
                 </div>
                 <div className='inline-item'>
@@ -131,10 +131,10 @@ const RestaurantDetails = () => {
                             <div key={index}>
                                 <div className='recommended'>
                                     {item?.card?.card?.title}({" "}
-                                    {item?.card?.card?.itemCards.length} )
+                                    {item?.card?.card?.itemCards?.length} )
                                 </div>
 
-                                {item?.card?.card?.itemCards.map((eachItem) => (
+                                {item?.card?.card?.itemCards?.map((eachItem) => (
                                     <BootstrapCard
                                         key={eachItem?.card?.info?.id}
                                         content={
