@@ -7,6 +7,7 @@ import RestaurantCardComponent from "./RestaurantComponent";
 import Shimmer from "./ShimmerUI";
 
 import restaurantList from "../utils/mockData";
+import {RESTAURANT_LIST_API} from "../utils/constant";
 
 // const SearchInput = ({ resList }) => {
 //     return (
@@ -67,9 +68,7 @@ export const Body = () => {
     console.log("render()"); // It'll render when the State will change.
 
     async function fetchRestaurantsList() {
-        const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING"
-        );
+        const data = await fetch(RESTAURANT_LIST_API);
         const json = await data.json();
         console.log("Fetch Res: ", json);
         setFilteredRestaurants(json?.data?.cards[2]?.data.data.cards);

@@ -18,7 +18,7 @@ const AppLayout = () => (
     <div className='app-Conatiner'>
         <Header />
         <Outlet />
-        <Footer />
+        {/* <Footer /> */}
     </div>
 );
 

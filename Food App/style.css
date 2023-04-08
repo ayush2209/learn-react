@@ -192,3 +192,103 @@
     margin-bottom: 4px;
     white-space: nowrap;
 }
+
+.res_details_rating {
+    margin: 0px;
+    width: 30%;
+}
+
+.res_details_card_width {
+}
+
+.item-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inline-item {
+    display: flex;
+}
+.restaurantNameStyle {
+    font-size: 1.43rem;
+    font-weight: 600;
+    color: #282c3f;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.RestaurantTimeCost > p {
+    color: #3e4152;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.vegOnly {
+    font-size: 1rem;
+    color: #3d4152;
+    font-weight: 600;
+}
+
+.recommended {
+    color: #3e4152;
+    font-weight: 800;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.menu_Reataurant_Align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-Img {
+    width: 118px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.styles_itemNameText {
+    margin-right: 4px;
+    font-size: 1.22rem;
+    font-weight: 500;
+    color: #3e4152;
+    word-break: break-word;
+}
+.vej_Item {
+    color: #0f8a65;
+}
+
+.nonVej_Item {
+    color: #e43b4f;
+}
+
+.menu-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 200px;
+    overflow: hidden;
+}
+
+.add-btn {
+    margin-left: 2px;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-top: -20px;
+    border-radius: 5px;
+}
+
+.avg_icon_good {
+    color: #3d9b6d;
+}
+.avg_icon_bad {
+    color: rgb(237, 89, 89);
+}
+
+.restaurantRatings_totalRatings{
+    color: #8b8d97;
+    font-family: ProximaNovaCondensedRegular,arial,Helvetica Neue,sans-serif;
+}
