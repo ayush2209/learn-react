@@ -8,7 +8,7 @@ import Shimmer from "./ShimmerUI";
 
 import restaurantList from "../utils/mockData";
 import {RESTAURANT_LIST_API} from "../utils/constant";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 // const SearchInput = ({ resList }) => {
 //     return (
@@ -66,6 +66,7 @@ export const Body = () => {
         fetchRestaurantsList();
     }, []);
 
+    console.log(useState()); // Will throw an error.
     console.log("render()"); // It'll render when the State will change.
 
     async function fetchRestaurantsList() {
@@ -124,7 +125,7 @@ export const Body = () => {
                 {filteredRestaurants?.map((eachRes) => {
                     return (
                         <Link
-                            style={{textDecoration: "none", color: '#282c3f'}}
+                            style={{textDecoration: "none", color: "#282c3f"}}
                             to={"/restaurant/" + eachRes.data.id}
                             key={eachRes.data.id}
                         >
