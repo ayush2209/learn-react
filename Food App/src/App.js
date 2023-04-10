@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
 
@@ -12,6 +16,7 @@ import About from "./Componenet/About";
 import WildCardRouter from "./Componenet/WildCardRouter";
 import ContactUsComponent from "./Componenet/Contact";
 import RestaurantDetails from "./Componenet/RestaurantsDetails";
+import LogInForm from "./Componenet/Form";
 
 // App Page
 const AppLayout = () => (
@@ -43,6 +48,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "restaurant/:id",
                 element: <RestaurantDetails />,
+            },
+            {
+                path: "login",
+                element: <LogInForm />,
             },
         ],
     },

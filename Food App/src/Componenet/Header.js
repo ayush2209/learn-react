@@ -54,7 +54,8 @@ const Header = () => {
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item
-                                    href='#profile/3.4'
+                                    as={Link}
+                                    to='/'
                                     onClick={() => {
                                         setLoginState(false);
                                     }}
@@ -65,6 +66,8 @@ const Header = () => {
                         ) : (
                             <Button
                                 variant='outline-none'
+                                as={Link}
+                                to='/login'
                                 onClick={() => {
                                     setLoginState(true);
                                 }}
