@@ -23,7 +23,13 @@ const RestaurantCardComponent = ({resObj}) => {
             <img src={RES_IMG_URL + cloudinaryImageId} />
             <span className='mt-3' style={customStyle}>
                 <h5>{name}</h5>
-                <p>{resObj.data.veg ? "Veg" : "Nonveg"}</p>
+                <p>
+                    {resObj.data.veg ? (
+                        <span className='vej_Item'>Vej</span>
+                    ) : (
+                        <span className='nonVej_Item'>Nonvej</span>
+                    )}
+                </p>
             </span>
             <p>{cuisines.join(", ")}</p>
             <p>{area}</p>
