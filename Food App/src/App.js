@@ -17,13 +17,15 @@ import WildCardRouter from "./Componenet/WildCardRouter";
 import ContactUsComponent from "./Componenet/Contact";
 import RestaurantDetails from "./Componenet/RestaurantsDetails";
 import LogInForm from "./Componenet/Form";
+import Profile from "../../Episode 08 : Lets get classy/Component/ClassBasesComponent";
+import AboutClassBasedComponent from "./Componenet/About";
 
 // App Page
 const AppLayout = () => (
     <div className='app-Conatiner'>
         <Header />
         <Outlet />
-        {/* <Footer /> */}
+        <Footer />
     </div>
 );
 
@@ -39,7 +41,13 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />,
+                element: <AboutClassBasedComponent />,
+                children: [
+                    {
+                        path: "profile",
+                        element: <Profile />,
+                    },
+                ],
             },
             {
                 path: "/contact-us",
