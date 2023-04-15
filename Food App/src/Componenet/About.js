@@ -12,6 +12,7 @@ import React from "react";
 //         </div>
 //     );
 // };
+//
 
 class AboutClassBasedComponent extends React.Component {
     constructor(props) {
