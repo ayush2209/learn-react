@@ -85,7 +85,7 @@ export const Body = () => {
             {/* Passing the value from here to search component to filter the data. */}
 
             <div className='searchBar'>
-                <div></div>
+                <div>List Will Come</div>
                 <div>
                     <Form className='d-flex'>
                         <Form.Control

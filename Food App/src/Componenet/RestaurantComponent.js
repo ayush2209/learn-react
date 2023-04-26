@@ -6,6 +6,13 @@ const color = {
 
 const customStyle = {
     justifyContent: "space-between",
+    marginTop: "10px",
+};
+
+const fontSize = {
+    fontSize: "13px",
+    fontWeight: "550",
+    wordBreak: "break-word",
 };
 
 const RestaurantCardComponent = ({resObj}) => {
@@ -17,22 +24,30 @@ const RestaurantCardComponent = ({resObj}) => {
         avgRating,
         lastMileTravelString,
         costForTwoString,
+        promoted,
     } = resObj.data;
     return (
-        <div className='card'>
+        <div className='card flex-fill'>
             <img src={RES_IMG_URL + cloudinaryImageId} />
-            <span className='mt-3' style={customStyle}>
-                <h5>{name}</h5>
-                <p>
+            {promoted ? (
+                <div className='res-type-conatiner'>
+                    <div className='restype-txt'>Promoted</div>
+                </div>
+            ) : (
+                <div></div>
+            )}
+            <span style={customStyle}>
+                <div style={fontSize}>{name}</div>
+                <div>
                     {resObj.data.veg ? (
                         <span className='vej_Item'>Vej</span>
                     ) : (
                         <span className='nonVej_Item'>Nonvej</span>
                     )}
-                </p>
+                </div>
             </span>
-            <p>{cuisines.join(", ")}</p>
-            <p>{area}</p>
+            <div className='cuisinedStyle'>{cuisines.join(", ")}</div>
+            {/* <p>{area}</p> */}
             <hr />
             <span>
                 <p style={color}>
