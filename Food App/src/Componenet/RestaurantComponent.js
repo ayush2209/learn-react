@@ -25,41 +25,61 @@ const RestaurantCardComponent = ({resObj}) => {
         lastMileTravelString,
         costForTwoString,
         promoted,
+        aggregatedDiscountInfoV2
     } = resObj.data;
     return (
-        <div className='card flex-fill'>
-            <img src={RES_IMG_URL + cloudinaryImageId} />
-            {promoted ? (
-                <div className='res-type-conatiner'>
-                    <div className='restype-txt'>Promoted</div>
-                </div>
-            ) : (
-                <div></div>
-            )}
-            <span style={customStyle}>
-                <div style={fontSize}>{name}</div>
+      <div className='externalCard'>
+        <div className='card'>
+          <img src={RES_IMG_URL + cloudinaryImageId} />
+          {promoted ? (
+            <div className='res-type-conatiner'>
+              <div className='restype-txt'>Promoted</div>
+            </div>
+          ) : (
+            <div></div>
+          )}
+          <span style={customStyle}>
+            <div style={fontSize}>{name}</div>
+            <div className='cuisinedStyle'>
+              {resObj.data.veg ? (
+                <span className='vej_Item'>.</span>
+              ) : (
+                <span className='nonVej_Item'>.</span>
+              )}
+            </div>
+          </span>
+          <div className='cuisinedStyle'>{cuisines.join(", ")}</div>
+          {/* <p>{area}</p> */}
+          <hr />
+          <div className='cuisinedStyle'>
+            <div style={color}>
+              <i className='fa-solid fa-star'></i>
+              {avgRating}
+            </div>
+            <div> | </div>
+            <div>{lastMileTravelString}</div>
+            <div>| </div>
+            <div>{costForTwoString}</div>
+          </div>
+          <div>
+            {aggregatedDiscountInfoV2 ? (
+              <div className='discount'>
                 <div>
-                    {resObj.data.veg ? (
-                        <span className='vej_Item'>Vej</span>
-                    ) : (
-                        <span className='nonVej_Item'>Nonvej</span>
-                    )}
+                  {aggregatedDiscountInfoV2?.header} { aggregatedDiscountInfoV2?.header ? " | " : ''}
                 </div>
-            </span>
-            <div className='cuisinedStyle'>{cuisines.join(", ")}</div>
-            {/* <p>{area}</p> */}
-            <hr />
-            <span>
-                <p style={color}>
-                    <i className='fa-solid fa-star'></i>
-                    {avgRating}
-                </p>
-                <p> | </p>
-                <p>{lastMileTravelString}</p>
-                <p>| </p>
-                <p>{costForTwoString}</p>
-            </span>
+                <div>
+                  {aggregatedDiscountInfoV2?.shortDescriptionList[0]?.meta}
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
+          </div>
+          <div className="onHoverDisplay">
+            I'll be come on hover
+          </div>
         </div>
+      </div>
     );
 };
 

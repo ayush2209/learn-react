@@ -56,27 +56,32 @@
 }
 
 .restaurant-list {
+    margin-top: 5px;
     width: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1.5rem;
 }
 
 .card {
-    padding: 10px;
-    width: 300px;
+    width: 260px;
     cursor: pointer;
-    margin: 20px;
-    padding: 10px;
     max-height: 500px;
 }
 
-.card:hover {
-    border: 1px solid;
+.externalCard .card {
+    border: none !important;
+    margin: 0px !important;
+}
+
+.externalCard {
+    padding: 20px 20px 20px;
+    border: 1px solid #fff;
+}
+.externalCard:hover {
     border-color: #d3d5df;
-    border-radius: 0%;
-    border-color: #d3d5df;
-    box-shadow: 0 4px 7px 0 rgba(218, 220, 230, 0.6);
+    box-shadow: 0 4px 7px 0 rgba(218,220,230,.6);
 }
 
 .card > img {
@@ -122,9 +127,11 @@
 
 /* Shimmer */
 .shimmer-container {
+    padding: 20px 20px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 2.5rem;
 }
 
 /* Ayush */
@@ -234,8 +241,7 @@
 
 .recommended {
     color: #3e4152;
-    font-weight: 800;
-    font-size: 1.3rem;
+    font-size: 1rem;
     display: inline-block;
 }
 
@@ -344,6 +350,21 @@
     color: #686b78;
     font-size: 13px;
     margin-top: 4px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.discount {
+    border-top: 1px solid #e9e9eb;
+    display: flex;
+    gap: 5px;
+    color: #686b78;
+    font-size: 13px;
+    margin-top: 4px;
+    padding-top: 14px;
+    margin-top: 14px;
+    color: #8a584b;
+    display: -ms-flexb
 }
 
 .menu-items-list .card {
@@ -383,4 +404,8 @@
     color: white;
     background-color: white;
     box-shadow: none
+}
+
+.onHoverDisplay {
+    display: none;
 }

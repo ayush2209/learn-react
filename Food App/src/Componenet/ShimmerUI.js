@@ -6,7 +6,7 @@ const customStyle = {
 // Shimmer card to display with animation
 const ShimmerCardToDisplay = () => {
     return (
-        <>
+        <div className="externalCard">
             <div className='card'>
                 <img className='shimmer-img stroke animate' />
                 <span className='mt-3' style={customStyle}>
@@ -22,7 +22,7 @@ const ShimmerCardToDisplay = () => {
                     <p className='shimmer-card-bottom stroke animate'></p>
                 </span>
             </div>
-        </>
+        </div>
     );
 };
 
