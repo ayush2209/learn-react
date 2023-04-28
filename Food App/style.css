@@ -193,9 +193,8 @@
 }
 
 .restaurant-Name-Add {
-    font-size: 0.93rem;
+    font-size: 0.80rem;
     color: #7e808c;
-    height: calc(0.93rem + 2px);
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 4px;
@@ -203,11 +202,13 @@
 }
 
 .res_details_rating {
-    margin: 0px;
-    width: 30%;
-}
-
-.res_details_card_width {
+    border: 1px solid #e9e9eb;
+    box-shadow: 0 1px 5px #f9f9f9;
+    border-radius: 6px;
+    text-align: center;
+    padding: 8px;
+    max-width: 100px;
+    float: right;
 }
 
 .item-center {
@@ -220,7 +221,7 @@
     display: flex;
 }
 .restaurantNameStyle {
-    font-size: 1.43rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #282c3f;
     margin-bottom: 8px;
@@ -231,6 +232,12 @@
     color: #3e4152;
     font-size: 15px;
     font-weight: 700;
+}
+
+hr.new {
+    border: none;
+    border-bottom: 1px dashed #d3d3d3;
+    opacity: 1.5;
 }
 
 .vegOnly {
@@ -259,7 +266,7 @@
 
 .styles_itemNameText {
     margin-right: 4px;
-    font-size: 1.22rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #3e4152;
     word-break: break-word;
@@ -296,14 +303,25 @@
 
 .avg_icon_good {
     color: #3d9b6d;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9e9eb;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
 }
 .avg_icon_bad {
     color: rgb(237, 89, 89);
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9e9eb;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .restaurantRatings_totalRatings {
+    font-size: 10px;
     color: #8b8d97;
-    font-family: ProximaNovaCondensedRegular, arial, Helvetica Neue, sans-serif;
+    font-family: ProximaNovaCondensedRegular,arial,Helvetica Neue,sans-serif;
 }
 
 .centerOfScreen {
@@ -408,4 +426,35 @@
 
 .onHoverDisplay {
     display: none;
+}
+
+.onHoverDisplay:hover {
+    display: block;
+}
+
+.inline-item {
+    gap: 2rem;
+    margin-bottom: 20px;
+}
+
+.pureVeg {
+    margin-top: 35px;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: flex;
+    font-weight: 500;
+}
+
+.price-Font {
+    font-size: 12px;
+}
+
+.addToCart {
+    padding: 11px 16px;
+    background-color: #60b246;
+    color: #fff;
+    position: relative;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
 }
