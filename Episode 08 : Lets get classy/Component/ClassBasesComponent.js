@@ -33,19 +33,6 @@ class Profile extends React.Component {
                     <img src={this.state?.userInfo?.avatar_url} />
                     <div className='mt-2'>{this.state?.userInfo?.location}</div>
                     <div>GitHub Repo: {this.state?.userInfo?.public_repos}</div>
-                    {/* <div>Count: {this.state.count}</div> */}
-                    {/* <button
-                        className='btn btn-info'
-                        onClick={() => {
-                            //We do not mutate state directly.
-                            // this.state.count = 1; Never ever do this, this is bad exercise.
-                            this.setState({
-                                count: 1,
-                            });
-                        }}
-                    >
-                        Increase Count
-                    </button> */}
                 </div>
             </div>
         );

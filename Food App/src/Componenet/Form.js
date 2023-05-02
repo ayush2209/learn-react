@@ -1,6 +1,6 @@
 // This is created by Libarray : Formik.
-import {Formik, Form, TextField, Field} from "formik";
-import {object, string} from "yup";
+import { Formik, Form, TextField, Field } from "formik";
+import { object, string } from "yup";
 
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -25,10 +25,10 @@ const LogInForm = () => {
         }, 0);
     }
     return (
-        <div className='centerOfScreen' style={{height: "94vh"}}>
+        <div className='centerOfScreen' style={{ height: "94vh" }}>
             <Formik
                 validationSchema={validationSchema}
-                initialValues={{userName: "", password: ""}}
+                initialValues={{ userName: "", password: "" }}
                 onSubmit={(values) => {
                     handleFromSubmit(JSON.stringify(values));
                 }}
@@ -42,7 +42,7 @@ const LogInForm = () => {
                     handleSubmit,
                 }) => (
                     <div className='container card col col-sm-4 col-md-4 col-lg-4 col-4 col-xl-4'>
-                        <h5 className='mt-1 mb-1 ms-1'>Login</h5>
+                        <h5 className='mt-2 mb-1 ms-1'>Login</h5>
                         <hr />
                         {/* Passing handleSubmit parameter to html form onSubmit property */}
                         <form
@@ -57,10 +57,10 @@ const LogInForm = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.userName}
-                                    placeholder='Enter Password'
+                                    placeholder='Enter Email'
                                     className='form-control'
                                 />
-                                <p className='mt-1' style={{color: "red"}}>
+                                <p className='mt-1' style={{ color: "red" }}>
                                     {errors.userName &&
                                         touched.userName &&
                                         errors.userName}
@@ -76,7 +76,7 @@ const LogInForm = () => {
                                     placeholder='Enter Password'
                                     className='form-control'
                                 />
-                                <p className='mt-1' style={{color: "red"}}>
+                                <p className='mt-1' style={{ color: "red" }}>
                                     {errors.password &&
                                         touched.password &&
                                         errors.password}
@@ -87,7 +87,7 @@ const LogInForm = () => {
                                 type='submit'
                                 fullWidth
                                 variant='contained'
-                                sx={{mt: 2, mb: 2}}
+                                sx={{ mt: 2, mb: 2 }}
                             >
                                 Sign In
                             </Button>
