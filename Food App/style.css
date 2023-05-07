@@ -458,3 +458,12 @@ hr.new {
     font-size: 15px;
     cursor: pointer;
 }
+
+.border-left {
+    border-left: 1px dotted black;
+    padding: 10px;
+}
+.padding-20 {
+    padding: 5rem;
+    flex-wrap: wrap;
+}

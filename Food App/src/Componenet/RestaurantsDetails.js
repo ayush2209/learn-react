@@ -98,7 +98,7 @@ const RestaurantDetails = () => {
         {restaurantDetails?.veg ? (
           <div className='pureVeg' style={{ gap: '5px' }}>
             <span>
-              <i class="fa fa-sharp fa-light fa-leaf" style={{ color: '#65931f' }}></i>
+              <i className="fa fa-sharp fa-light fa-leaf" style={{ color: '#65931f' }}></i>
             </span>
             <span>Pure Veg</span>
           </div>

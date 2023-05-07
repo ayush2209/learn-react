@@ -24,17 +24,18 @@ class Profile extends React.Component {
         console.log(this.props.name + " render");
         //Render is a function which is mendatory in calss based component and it returs JSX.
         return (
-            <div className='container mt-5'>
-                <div className='card'>
-                    <h2 className='mb-2'>
-                        {" "}
-                        User: {this.state?.userInfo?.name}
-                    </h2>
+            <div className='container inline-item padding-20'>
+                <div>
                     <img src={this.state?.userInfo?.avatar_url} />
+                </div>
+                <div className="border-left">
+                    <h5 className='mb-2'> {" "}
+                        User: {this.state?.userInfo?.name}
+                    </h5>
                     <div className='mt-2'>{this.state?.userInfo?.location}</div>
                     <div>GitHub Repo: {this.state?.userInfo?.public_repos}</div>
                 </div>
-            </div>
+            </div >
         );
     }
 }
