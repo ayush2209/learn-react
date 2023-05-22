@@ -1,34 +1,39 @@
-import {RES_IMG_URL} from "../utils/constant";
+import { useState } from "react";
+import { RES_IMG_URL } from "../utils/constant";
 
 const color = {
-    color: "#db7c38",
+  color: "#db7c38",
 };
 
 const customStyle = {
-    justifyContent: "space-between",
-    marginTop: "10px",
+  justifyContent: "space-between",
+  marginTop: "10px",
 };
 
 const fontSize = {
-    fontSize: "13px",
-    fontWeight: "550",
-    wordBreak: "break-word",
+  fontSize: "13px",
+  fontWeight: "550",
+  wordBreak: "break-word",
 };
 
-const RestaurantCardComponent = ({resObj}) => {
-    const {
-        cloudinaryImageId,
-        name,
-        cuisines,
-        area,
-        avgRating,
-        lastMileTravelString,
-        costForTwoString,
-        promoted,
-        aggregatedDiscountInfoV2
-    } = resObj.data;
-    return (
-      <div className='externalCard'>
+const RestaurantCardComponent = ({ resObj }) => {
+  const {
+    cloudinaryImageId,
+    name,
+    cuisines,
+    area,
+    avgRating,
+    lastMileTravelString,
+    costForTwoString,
+    promoted,
+    aggregatedDiscountInfoV2
+  } = resObj.data;
+
+  const restaurant_Rating = `avg_rating_${avgRating >= 4 ? 'good' : 'avg'}`;
+
+  return (
+    cloudinaryImageId ? (
+      <div className='externalCard mb-1'>
         <div className='card'>
           <img src={RES_IMG_URL + cloudinaryImageId} />
           {promoted ? (
@@ -52,9 +57,12 @@ const RestaurantCardComponent = ({resObj}) => {
           {/* <p>{area}</p> */}
           <hr />
           <div className='cuisinedStyle'>
-            <div style={color}>
-              <i className='fa-solid fa-star'></i>
-              {avgRating}
+            <div className={restaurant_Rating}>
+              <span className="avg_Rating">
+                <i className='fa-solid fa-star me-1'></i>
+                {avgRating}
+              </span>
+
             </div>
             <div> | </div>
             <div>{lastMileTravelString}</div>
@@ -65,7 +73,7 @@ const RestaurantCardComponent = ({resObj}) => {
             {aggregatedDiscountInfoV2 ? (
               <div className='discount'>
                 <div>
-                  {aggregatedDiscountInfoV2?.header} { aggregatedDiscountInfoV2?.header ? " | " : ''}
+                  {aggregatedDiscountInfoV2?.header} {aggregatedDiscountInfoV2?.header ? " | " : ''}
                 </div>
                 <div>
                   {aggregatedDiscountInfoV2?.shortDescriptionList[0]?.meta}
@@ -80,7 +88,8 @@ const RestaurantCardComponent = ({resObj}) => {
           </div>
         </div>
       </div>
-    );
+    ) : (<></>)
+  );
 };
 
 export default RestaurantCardComponent;

@@ -434,7 +434,7 @@ hr.new {
 
 .inline-item {
     gap: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .pureVeg {
@@ -466,4 +466,24 @@ hr.new {
 .padding-20 {
     padding: 5rem;
     flex-wrap: wrap;
+}
+
+.avg_rating_good {
+    background-color: #3d9b6d;
+    color: #fff;
+}
+.avg_rating_avg {
+    background-color: #db7c38;
+    color: #fff;
+}
+
+.avg_Rating {
+    height: 20px;
+    width: 43px;
+    padding: 0 5px;
+    font-weight: 400;
+}
+.btn {
+    --bs-btn-padding-x: 0.5rem !important;
+    --bs-btn-padding-y: .5rem !important;
 }

@@ -13,30 +13,38 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import './RestauranantDetails/RestauranantDetails.scss';
+
 
 const Ratingcard = ({ eachObj }) => {
+  const { avgRating, totalRatingsString } = eachObj;
+
+  const avgIconClassName = `avg_icon_${avgRating >= 4 ? 'good' : 'bad'}`;
+
   return (
-    <Card className='res_details_rating'>
-      <span className={eachObj?.avgRating >= 4 ? "avg_icon_good" : "avg_icon_bad"} >
-        <span className='item-center'>
+    <Card className="res_details_rating">
+      <span className={avgIconClassName}>
+        <span className="item-center">
           <div>
-            <i className='fa fa-solid fa-star'></i>
+            <i className="fa fa-solid fa-star"></i>
           </div>
-          <div className='ms-2'>{eachObj?.avgRating}</div>
+          <div className="ms-2">{avgRating}</div>
         </span>
       </span>
-      <div className='item-center restaurantRatings_totalRatings'>
-        {eachObj?.totalRatingsString}
+      <div className="item-center restaurantRatings_totalRatings">
+        {totalRatingsString}
       </div>
     </Card>
   );
 };
 
+
 const RestaurantDetails = () => {
   const { id } = useParams();
   const [restaurantDetails, setRestaurantDetails] = useState([]);
   const [restaurantMenu, setRestaurantMenu] = useState([]);
-
+  const [cartItems, setCartItems] = useState(0);
+  const [offerCard, setOfferCard] = useState([]);
   useEffect(() => {
     getRestaurantsDetails();
   }, []);
@@ -45,11 +53,22 @@ const RestaurantDetails = () => {
     const resApiDetails = await fetch(RESTAURANT_DETAILS_API + id);
     const jsonData = await resApiDetails?.json();
     const restaurant_Details = jsonData?.data?.cards[0]?.card?.card?.info;
-    const restaurant_Menu =
-      jsonData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+    const restaurant_Menu = jsonData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+    console.log('ac', jsonData?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.offers)
+    setOfferCard(jsonData?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.offers);
     setRestaurantDetails(restaurant_Details);
-    console.log(restaurantDetails);
     setRestaurantMenu(restaurant_Menu);
+  }
+
+  const addtoCart = () => {
+    setCartItems(1);
+  }
+  const removeFromCart = () => {
+    setCartItems(0);
+  }
+  const addtoCartMore = () => {
+    console.log(cartItems);
+    setCartItems(2);
   }
 
   return (
@@ -80,19 +99,22 @@ const RestaurantDetails = () => {
         {"  | "}
         <p style={{ marginLeft: "5px" }}> {restaurantDetails?.costForTwoMessage} </p>
       </div>
-      <div className='inline-item'>
-        <div>
-          <BootstrapCard content={"Card 1"} />
-        </div>
-        <div>
-          <BootstrapCard content={"Card 2"} />
-        </div>
-        <div>
-          <BootstrapCard content={"Card 3"} />
-        </div>
-        <div>
-          <BootstrapCard content={"Card 4"} />
-        </div>
+      {/* <div className='inline-item'> */}
+      <div className="offer">
+        {offerCard?.map((el, index) => (
+          <div
+            className="offer-card"
+            key={el?.info?.restId + index}>
+            <div className="header">
+              {el?.info?.header}
+            </div>
+            <span className="desc">
+              {el?.info?.couponCode} |{' '}
+              {el?.info?.description}
+            </span>
+          </div>
+        )
+        )}
       </div>
       <div>
         {restaurantDetails?.veg ? (
@@ -142,7 +164,9 @@ const RestaurantDetails = () => {
                           <div className='menu-img-wrapper'>
                             {<img className='menu-Img' src={RES_IMG_URL + eachItem?.card?.info?.imageId} alt={eachItem?.card?.info?.name} />}
                             <div className="item-center">
-                              <button className="btn btn-sm btn-outline-primary"> Add to cart </button>
+                              {cartItems > 0 ? (<button className="btn" onClick={addtoCartMore}><i className="fa fa-thin fa-plus"></i> </button>) : <></>}
+                              {cartItems <= 0 ? (<button className="btn" onClick={addtoCart}> ADD </button>) : <> {cartItems} </>}
+                              {cartItems > 0 ? (<button className="btn" onClick={removeFromCart}><i className="fa fa-thin fa-minus"></i> </button>) : <></>}
                             </div>
                           </div>
                         </div>
@@ -174,7 +198,6 @@ const RestaurantDetails = () => {
                                     alt={catogaryMenuList?.card?.info?.name}
                                   />
                                 }
-                                <button> Add to cart </button>
                               </div>
                             </div>
                           }
