@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -7,8 +7,8 @@ import RestaurantCardComponent from "./RestaurantComponent";
 import Shimmer from "./ShimmerUI";
 
 import restaurantList from "../utils/mockData";
-import {RESTAURANT_LIST_API} from "../utils/constant";
-import {Link} from "react-router-dom";
+import { RESTAURANT_LIST_API } from "../utils/constant";
+import { Link } from "react-router-dom";
 
 // const SearchInput = ({ resList }) => {
 //     return (
@@ -73,8 +73,8 @@ export const Body = () => {
         const data = await fetch(RESTAURANT_LIST_API);
         const json = await data.json();
         console.log("Fetch Res: ", json);
-        setFilteredRestaurants(json?.data?.cards[2]?.data.data.cards);
-        setAllRestaurants(json?.data?.cards[2]?.data.data.cards);
+        setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     return allRestaurants.length === 0 ? (
@@ -125,9 +125,9 @@ export const Body = () => {
                 {filteredRestaurants?.map((eachRes) => {
                     return (
                         <Link
-                            style={{textDecoration: "none", color: "#282c3f"}}
-                            to={"/restaurant/" + eachRes.data.id}
-                            key={eachRes.data.id}
+                            style={{ textDecoration: "none", color: "#282c3f" }}
+                            to={"/restaurant/" + eachRes.info.id}
+                            key={eachRes.info.id}
                         >
                             <RestaurantCardComponent resObj={eachRes} />
                         </Link>

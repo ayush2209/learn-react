@@ -21,13 +21,12 @@ const RestaurantCardComponent = ({ resObj }) => {
     cloudinaryImageId,
     name,
     cuisines,
-    area,
     avgRating,
     lastMileTravelString,
     costForTwoString,
     promoted,
     aggregatedDiscountInfoV2
-  } = resObj.data;
+  } = resObj.info;
 
   const restaurant_Rating = `avg_rating_${avgRating >= 4 ? 'good' : 'avg'}`;
 
@@ -46,7 +45,7 @@ const RestaurantCardComponent = ({ resObj }) => {
           <span style={customStyle}>
             <div style={fontSize}>{name}</div>
             <div className='cuisinedStyle'>
-              {resObj.data.veg ? (
+              {resObj.info.veg ? (
                 <span className='vej_Item'>.</span>
               ) : (
                 <span className='nonVej_Item'>.</span>
