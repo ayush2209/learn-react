@@ -33,14 +33,7 @@ const LogInForm = () => {
                     handleFromSubmit(JSON.stringify(values));
                 }}
             >
-                {({
-                    values,
-                    errors,
-                    touched,
-                    handleChange,
-                    handleBlur,
-                    handleSubmit,
-                }) => (
+                {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                     <div className='container card col col-sm-4 col-md-4 col-lg-4 col-4 col-xl-4'>
                         <h5 className='mt-2 mb-1 ms-1'>Login</h5>
                         <hr />
